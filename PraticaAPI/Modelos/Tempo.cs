@@ -40,6 +40,12 @@ public class Main
     [JsonPropertyName("temp_max")]
     public double TempMax { get; set; }
 
+    /// <summary>
+    /// Pressao recebida da API em hPa (HectoPascal)
+    /// </summary>
+    /// <value>
+    /// Necessario Fazer a conversão para Atm ou Bar
+    /// </value>
     [JsonPropertyName("pressure")]
     public int Pressure { get; set; }
 
@@ -55,6 +61,12 @@ public class Main
 
 public class Wind
 {
+    /// <summary>
+    /// Velocidade do Vento em m/s
+    /// </summary>
+    /// <value>
+    /// Converter para Km/Hr
+    /// </value>
     [JsonPropertyName("speed")]
     public double Speed { get; set; }
 
