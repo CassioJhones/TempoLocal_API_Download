@@ -11,12 +11,12 @@ public class Function
     /// </summary>
     /// <param name="KelvinTemp">Temperatura em Escala Kelvin</param>
     /// <returns>Temperatura em Escala Celcius</returns>
-    public static double KelvinToCelcius(double KelvinTemp) => Math.Round((KelvinTemp - 273.15), 2);
+    public static double KelvinToCelcius(double KelvinTemp) => Math.Round(KelvinTemp - 273.15, 2);
 
     /// <summary>
     /// Realiza a conversao de M/S para Km/H
     /// </summary>
     /// <param name="Speed">Velocidade em Metros por Segundo</param>
     /// <returns>Velocidade em Kilometro por Hora</returns>
-    public static double MsToKm(double Speed) => Math.Round((Speed * 3.6), 2);
+    public static double MsToKm(double Speed) => Math.Round(Speed * 3.6, 2);
 }
