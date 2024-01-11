@@ -1,17 +1,14 @@
-﻿
-using PraticaAPI.Filtro;
+﻿using PraticaAPI.Filtro;
 using PraticaAPI.Modelos;
 using System.Text.Json;
 
-
-using (HttpClient client = new())
+using (HttpClient chamada = new())
 {
     string city = "London";
-    string link = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Function.chave()}";
+    string endPoint = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Function.chave()}";
     try
     {
-        //MOSTRAR PRO BRUNO E CASSIA
-        string resposta = await client.GetStringAsync(link);
+        string resposta = await chamada.GetStringAsync(endPoint);
         Root? cidade = JsonSerializer.Deserialize<Root>(resposta);
         double tempCelcius = Function.KelvinToCelcius(cidade!.Main.Temp);
         double veloKM = Function.MsToKm(cidade.Wind.Speed);
@@ -31,7 +28,7 @@ using (HttpClient client = new())
 /*
 using (HttpClient harrypotter = new())
 {
-    //FAZER ESSA MERDA DEPOIS kkkkkkkkkkkk
+    //FAZER ESSA DEPOIS
     try
     {
         string json = await harrypotter.GetStringAsync("https://hp-api.onrender.com/api/characters/house/gryffindor");

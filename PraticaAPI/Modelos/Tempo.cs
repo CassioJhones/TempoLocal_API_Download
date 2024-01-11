@@ -17,13 +17,13 @@ public class Weather
     public int Id { get; set; }
 
     [JsonPropertyName("main")]
-    public required string Main { get; set; }
+    public string? Main { get; set; }
 
     [JsonPropertyName("description")]
-    public required string Description { get; set; }
+    public string? Description { get; set; }
 
     [JsonPropertyName("icon")]
-    public required string Icon { get; set; }
+    public string? Icon { get; set; }
 }
 
 public class Main
@@ -74,13 +74,13 @@ public class Clouds
 public class Sys
 {
     [JsonPropertyName("country")]
-    public required string Country { get; set; }
+    public string? Country { get; set; }
 
     [JsonPropertyName("sunrise")]
-    public long Sunrise { get; set; }
+    public long? Sunrise { get; set; }
 
     [JsonPropertyName("sunset")]
-    public long Sunset { get; set; }
+    public long? Sunset { get; set; }
 }
 
 public class Root
@@ -89,38 +89,38 @@ public class Root
     public required Coord Coord { get; set; }
 
     [JsonPropertyName("weather")]
-    public required List<Weather> Weather { get; set; }
+    public List<Weather>? Weather { get; set; }
 
     [JsonPropertyName("base")]
-    public required string Base { get; set; }
+    public string? Base { get; set; }
 
     [JsonPropertyName("main")]
     public required Main Main { get; set; }
 
     [JsonPropertyName("visibility")]
-    public int Visibility { get; set; }
+    public int? Visibility { get; set; }
 
     [JsonPropertyName("wind")]
     public required Wind Wind { get; set; }
 
     [JsonPropertyName("clouds")]
-    public required Clouds Clouds { get; set; }
+    public Clouds? Clouds { get; set; }
 
     [JsonPropertyName("dt")]
-    public long Dt { get; set; }
+    public long? Dt { get; set; }
 
     [JsonPropertyName("sys")]
-    public required Sys Sys { get; set; }
+    public Sys? Sys { get; set; }
 
     [JsonPropertyName("timezone")]
-    public int Timezone { get; set; }
+    public int? Timezone { get; set; }
 
     [JsonPropertyName("id")]
-    public int Id { get; set; }
+    public int? Id { get; set; }
 
     [JsonPropertyName("name")]
-    public required string Name { get; set; }
+    public string? Name { get; set; }
 
     [JsonPropertyName("cod")]
-    public int Cod { get; set; }
+    public int? Cod { get; set; }
 }
