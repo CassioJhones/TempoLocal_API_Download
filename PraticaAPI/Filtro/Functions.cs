@@ -1,5 +1,5 @@
 ﻿namespace PraticaAPI.Filtro;
-public class Function
+public class Functions
 {
     /// <summary>
     /// Chave disponibilizada para uso gratuito da API
@@ -20,3 +20,5 @@ public class Function
     /// <returns>Velocidade em Kilometro por Hora</returns>
     public static double MsToKm(double Speed) => Math.Round(Speed * 3.6, 2);
 }
+
+
