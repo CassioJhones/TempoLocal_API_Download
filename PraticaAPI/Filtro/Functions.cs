@@ -19,6 +19,14 @@ public class Functions
     /// <param name="Speed">Velocidade em Metros por Segundo</param>
     /// <returns>Velocidade em Kilometro por Hora</returns>
     public static double MsToKm(double Speed) => Math.Round(Speed * 3.6, 2);
+
+    public static void MostraRed(string palavra)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write($"{palavra}");
+        Console.ResetColor(); // Restaura a cor original do console
+    }
 }
+
 
 
