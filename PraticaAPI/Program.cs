@@ -5,10 +5,11 @@ using System.Text.Json;
 
 Console.Title = $"Tempo Local";
 while (true)
-{   Console.WriteLine("Digite uma cidade");
+{
+    Console.WriteLine("Digite uma cidade");
     string? city = Console.ReadLine().ToUpper();
     using HttpClient chamada = new();
-    string endPoint = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Functions.ApiKey()}";
+    string endPoint = $"https://api.openweathermap.org/data/2.5/weather?q={city}&lang=pt_br&appid={Functions.ApiKey()}&units=metric";
     try
     {
         string resposta = await chamada.GetStringAsync(endPoint);
@@ -22,13 +23,9 @@ while (true)
         Weather listaTempo = cidade.Weather[0];
         string nome = cidade.Name.ToString();
         string? CeuAtual = listaTempo.Main;
-        string? OlhaCeu = listaTempo.Description;
+        string? OlhaCeu = listaTempo.Description.ToUpperInvariant();
+        int? tempo = cidade.Timezone;
 
-        if (CeuAtual.Contains("overcast")) CeuAtual = "Nublado";
-        if (CeuAtual.Contains("Clouds")) CeuAtual = "Nuvens";
-        if (OlhaCeu.Equals("scattered clouds")) CeuAtual = "Nuvens Dispersas";
-        if (CeuAtual.Contains("Rain")) CeuAtual = "Chuva";
-        if (CeuAtual.Contains("Clear")) CeuAtual = "Tempo Limpo";
 
         Console.Title = $"Tempo Local - {cidade.Name}";
         Console.Clear();
@@ -37,24 +34,25 @@ while (true)
         Console.WriteLine($"\n\t{cidade.Name}");
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine($"Os ventos estão há {veloKM} Km/H");
-        Console.WriteLine($"Temperatura de {tempCelcius}°C\nSensação de {tempSensacao}°C");
+        Console.WriteLine($"Temperatura de {cidade!.Main.Temp}°C\nSensação de {cidade!.Main.FeelsLike}°C");
         Console.WriteLine($"Umidade do ar: {umidade}%");
+        
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($"\n\tPrevisão ");
         Console.ForegroundColor = ConsoleColor.White;
+
         Console.Write($"Temperatura Maxima: ");
-        Functions.MostraVermelho(tempMax.ToString());
+        Functions.MostraVermelho(cidade!.Main.TempMax.ToString());
         Console.Write($"\nTemperatura Minima: ");
-        Functions.MostraAzul(tempMin.ToString());
-        var tt = Console.BufferHeight;
-        var yy = Console.BufferWidth;
+        Functions.MostraAzul(cidade!.Main.TempMin.ToString());
+        int tt = Console.BufferHeight;
+        int yy = Console.BufferWidth;
 
-            Console.SetCursorPosition(19,7);
+        Console.SetCursorPosition(19, 8);
 
-        
 
-        Console.WriteLine($" {CeuAtual}");
+        Functions.MostraAmarelo(OlhaCeu);
 
         ConsoleKeyInfo unused = Console.ReadKey();
         Console.Clear();
