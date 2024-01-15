@@ -2,13 +2,13 @@
 using PraticaAPI.Modelos;
 using System.Text.Json;
 
-//Console.WriteLine(texto);
+
 Console.Title = $"Tempo Local";
 while (true)
-{
-    string? city = Console.ReadLine();
+{   Console.WriteLine("Digite uma cidade");
+    string? city = Console.ReadLine().ToUpper();
     using HttpClient chamada = new();
-    string endPoint = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Functions.Chave()}";
+    string endPoint = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={Functions.ApiKey()}";
     try
     {
         string resposta = await chamada.GetStringAsync(endPoint);
@@ -26,6 +26,7 @@ while (true)
 
         if (CeuAtual.Contains("overcast")) CeuAtual = "Nublado";
         if (CeuAtual.Contains("Clouds")) CeuAtual = "Nuvens";
+        if (OlhaCeu.Equals("scattered clouds")) CeuAtual = "Nuvens Dispersas";
         if (CeuAtual.Contains("Rain")) CeuAtual = "Chuva";
         if (CeuAtual.Contains("Clear")) CeuAtual = "Tempo Limpo";
 
@@ -39,13 +40,21 @@ while (true)
         Console.WriteLine($"Temperatura de {tempCelcius}°C\nSensação de {tempSensacao}°C");
         Console.WriteLine($"Umidade do ar: {umidade}%");
 
-        Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine($"     Previsão ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine($"\n\tPrevisão ");
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write($"Temperatura Maxima: ");
         Functions.MostraVermelho(tempMax.ToString());
         Console.Write($"\nTemperatura Minima: ");
         Functions.MostraAzul(tempMin.ToString());
+        var tt = Console.BufferHeight;
+        var yy = Console.BufferWidth;
+
+            Console.SetCursorPosition(19,7);
+
+        
+
+        Console.WriteLine($" {CeuAtual}");
 
         ConsoleKeyInfo unused = Console.ReadKey();
         Console.Clear();

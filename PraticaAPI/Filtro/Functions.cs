@@ -4,7 +4,7 @@ public class Functions
     /// <summary>
     /// Chave disponibilizada para uso gratuito da API
     /// </summary>
-    public static string Chave() => "f24e3b3b88dc280e84e540c4500113d5";
+    public static string ApiKey() => "f24e3b3b88dc280e84e540c4500113d5";
 
     /// <summary>
     /// Realiza a conversao de temperatura Kelvin para Celcius.
@@ -31,6 +31,12 @@ public class Functions
     {
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write($"{palavra}°C");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+    public static void MostraAmarelo(string palavra)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write($"{palavra}");
         Console.ForegroundColor = ConsoleColor.White;
     }
 }
