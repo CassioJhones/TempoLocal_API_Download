@@ -20,11 +20,18 @@ public class Functions
     /// <returns>Velocidade em Kilometro por Hora</returns>
     public static double MsToKm(double Speed) => Math.Round(Speed * 3.6, 2);
 
-    public static void MostraRed(string palavra)
+    public static void MostraVermelho(string palavra)
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write($"{palavra}");
-        Console.ResetColor(); // Restaura a cor original do console
+        Console.Write($"{palavra}°C");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+
+    public static void MostraAzul(string palavra)
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.Write($"{palavra}°C");
+        Console.ForegroundColor = ConsoleColor.White;
     }
 }
 
