@@ -1,8 +1,8 @@
-![Static Badge](https://img.shields.io/badge/Status-Finalizado-brightgreen?style=for-the-badge)
+# Tempo Local  
+![Static Badge](https://img.shields.io/badge/Status-Finalizado-green?style=for-the-badge)
 ![VISUAL STUDIO](https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white)
 ![DOTNET](https://img.shields.io/badge/.NET-Version_8.0-gray?style=for-the-badge&labelColor=%23512BD4)
 ![GitHub repo size](https://img.shields.io/github/repo-size/CassioJhones/TempoLocal_API_Download?style=for-the-badge&label=Project%20Size&labelColor=%23512BD4)
-# Tempo Local  
 > Programa Console para exibição de informações do tempo, temperatura e outros.
 
 ## Documentação de como foi usada a API
