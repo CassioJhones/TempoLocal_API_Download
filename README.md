@@ -29,4 +29,4 @@ https://api.openweathermap.org/data/2.5/weather?q={LOCAL}&lang={IDIOMA}&appid={C
 
 A temperatura está disponível em unidades Fahrenheit, Celsius e Kelvin.<br/>
 Para temperatura em **Fahrenheit** use = imperial<br/>
-Para temperatura em **Celsius** use = métrica
+Para temperatura em **Celsius** use = metric
