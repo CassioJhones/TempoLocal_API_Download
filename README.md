@@ -5,6 +5,8 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/CassioJhones/TempoLocal_API_Download?style=for-the-badge&label=Project%20Size&labelColor=%23512BD4)
 > Programa Console para exibição de informações do tempo, temperatura e outros.
 
+ATUALIZAÇÃO: https://github.com/CassioJhones/Weather_WPF
+
 # Demonstração
 <img src="https://github.com/CassioJhones/TempoLocal_API_Download/assets/56178855/61381563-823f-408b-a706-1982e0652867" width="350px" alt="DEMONSTRAÇÃO">
 
